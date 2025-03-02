@@ -3,10 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!--        tailwind cdn-->
+    <script src="https://cdn.tailwindcss.com"></script>
+<!--    poppind fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Task Board</title>
+
     
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                bgBtn:' rgba(55, 82, 253, 1)',
+                titleColor:'rgba(0, 48, 60, 1)',
+                paraColor:'rgba(0, 0, 0, 1)',
+              }
+            }
+          }
+        }
+    </script>
+
+    
+
+</head>
+<body class="poppins-regular bg-[#f4f7ff]">
+<header>
+    <nav>
+        <div class="container main-nav 2xl h-100 mx-auto mt-2 bg-white ">
+            <div class=" flex justify-between items-center  p-4">
+                <!-- Left Side -->
+                <div class="flex items-center gap-x-2">
+                    <div class="logo">
+                        <img src="./assets/logo.png" class="h-10">
+                    </div>
+                    <div class="logo-text">
+                        <h2 class="text-xl ">Dev<span class="text-blue-500 font-bold">Board</span></h2>
+                    </div>
+                </div>
+            
+                <!-- Right Side -->
+                <div class="flex items-center gap-x-2">
+                    <div>
+                        <img src="./assets/checkbox.png" class="h-8">
+                    </div>
+                    <div class="text-center">
+                        <h1  id="increase-count" class="text-2xl font-bold">23</h1>
+                    </div>
+                    <div>
+                        <img  id="change-bg" src="./assets/theme-btn.png" class="h-8 pl-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="mt-5">
+    <div class="container 2xl mx-auto">
+        <div class="flex justify-between gap-10">
+            <!-- Left Section -->
+            <section class="bg-white p-6 rounded-2xl flex-1">
+                <!-- Top Section -->
+                <div class="flex justify-between items-center p-6 gap-6 rounded-lg shadow-md">
+                    <!-- Task Assigned -->
+                    <div class="flex items-center p-6 bg-[#F4F7FF] w-64 gap-x-4">
+                       <div class="check-box bg-[#F4F7FF] ">
+                          <img src="./assets/checkbox.png" >
+                       </div>
+                        <div>
+                            <h2 class="font-medium text-titleColor">Task Assigned</h2>
+                            <h2 id="reduce-count" class="text-3xl font-bold text-titleColor">6</h2>
+                        </div>
+                    </div>
+    
+                    <!-- Board Section -->
+                    <div id="board-btn" class="flex items-center gap-6 bg-gradient-to-r h-24 px-6 from-[rgba(55,82,253,1)] via-[rgba(108,127,250,1)] to-[rgba(155,168,248,1)]">
+                        <img src="./assets/board.png" class="h-10">
+                        <h1 class="text-2xl font-medium text-white">Discover Something New Today!</h1>
+                    </div>
+    
+                    <div class="flex items-center p-6 bg-[#F4F7FF] w-64 gap-x-4">
+                        <div class="check-box bg-white ">
+                            <img src="./assets/calender.png">
+                        </div>
+                         <div>
+                             <h2 id="update-date" class="text-lg pr-4 font-semibold"></h2>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- Dashed Line  -->
+                <div class="line"></div>
+    
+                <!-- Task Details -->
+                <div class="grid grid-cols-3 gap-8">
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor py-2 px-4 bg-white font-medium">ShopEase</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Fix Mobile Button Issue</h2>
+                        <p class="text-paraColor mt-2">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly.</p>
+                        
+                        <!-- Dashed Line  -->
+                        <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn " >Completed</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor py-2 px-4 bg-white font-medium">CloudSync</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Add Dark Mode</h2>
+                        <p class="text-paraColor mt-2">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth transition effect.</p>
+                        
+                        <!-- Dashed Line  -->
+                        <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn " >Completed</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor py-2 px-4 bg-white font-medium">SwiftPay</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Optimize  Home page </h2>
+                        <p class="text-paraColor mt-2">Debug using Chrome DevTools, check for overl apping elements, and ensure onClick works properly and ensure onClick works properly</p>
+                        
+                        <!-- Dashed Line  -->
+                <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn">Completed</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor py-2 px-4 bg-white font-medium">Meta</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Add new emoji 🤲</h2>
+                        <p class="text-paraColor mt-2">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                            and ensure onClick works properly</p>
+                        
+                                   <!-- Dashed Line  -->
+                <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn">Completed</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor  py-2 px-4 bg-white font-medium">Google LLC</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Integrate OpenAI API </h2>
+                        <p class="text-paraColor mt-2">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly.</p>
+                        
+                               <!-- Dashed Line  -->
+                <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn">Completed</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md task-item">
+                        <p class="text-titleColor py-2 px-4 bg-white font-medium">Glassdoar</p>
+                        <h2 class="text-2xl font-medium text-titleColor history-title">Improve Job searching </h2>
+                        <p class="text-paraColor mt-2">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly.</p>
+                        
+                               <!-- Dashed Line  -->
+                <div class="line"></div>
+
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- Deadline -->
+                            <div>
+                                <p class="tex-paraColor font-normal">Deadline</p>
+                                <h3 class="text-lg font-medium">21 March 2025</h3>
+                            </div>
+        
+                            <!-- Completed Button -->
+                            <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg complete-btn">Completed</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+    
+            <!-- Right Section (Activity Log) -->
+            <section class="bg-white shadow-md text-center p-6 rounded-3xl w-[366px] ">
+                <!-- Header -->
+                <div class="">
+                    <div class="flex items-center justify-center mb-4 gap-x-4">
+                        <img src="./assets/activity.png">
+                        <h1 class="text-xl  font-semibold">Activity Log</h1>
+                    </div>
+                </div>
+    
+                <!-- History Section -->
+                <div id="clear-history">
+                    <button class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg">Clear History</button>
+                </div>
+
+                <!-- Dashed Line  -->
+                <div class="line"></div>
+
+                <div id="history-add" class="mt-2">
+
+                </div>
+            </section>
+        </div>
+    </div>
+    
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

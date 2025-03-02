@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>BLOG</title>
+
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                bgBtn:' rgba(55, 82, 253, 1)',
+                titleColor:'rgba(0, 48, 60, 1)',
+                paraColor:'rgba(0, 0, 0, 1)',
+              }
+            }
+          }
+        }
+      </script>
+
+</head>
+<body class="poppins-regular bg-slate-100">
+    <header>
+        <nav>
+            <div class="container main-nav 2xl h-100 mx-auto mt-2 bg-white ">
+                <div class=" flex justify-between items-center  p-4">
+                    <!-- Left Side -->
+                    <div class="flex items-center gap-x-2">
+                        <div class="logo">
+                            <a href="index.html"><img src="./assets/logo.png" class="h-10"></a>
+                        </div>
+                        <div class="logo-text">
+                            <h2 class="text-xl ">Dev<span class="text-blue-500 font-bold">Board</span></h2>
+                        </div>
+                    </div>
+                
+                    <!-- Right Side -->
+                    <div class="flex items-center gap-x-2">
+                        <div id="back-desk">
+                            <a href="index.html" class="bg-bgBtn text-white font-medium py-3 px-4 rounded-lg">Back to Desk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class=" container 2xl mx-auto px-4 py-10">
+        <h1 class="text-4xl font-bold text-center mb-8">Blogs</h1>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">
+              Question 1: What are the different ways to select an element in the
+              DOM?
+            </h2>
+            <p class="text-gray-600 text-xl">
+              There are 5 ways in which you can select elements in a DOM using
+              selectors.
+              <br />
+              1. getElementsByTagName();
+              <br />
+              2. getElementsByClassName();
+              <br />
+              3. getElementById();
+              <br />
+              4. querySelector();
+              <br />
+              5. querySelectorAll();
+            </p>
+          </div>
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">
+              Question 2: What is the difference between innerHTML, innerText, and
+              textContent?
+            </h2>
+            <p class="text-gray-600 text-xl">
+              ১. innerHTML বর্ণনা: এই প্রপার্টি একটি উপাদানের মধ্যে থাকা HTML
+              মার্কআপকে পায় বা সেট করে। এটি HTML ট্যাগ অন্তর্ভুক্ত করতে পারে, যার
+              মানে আপনি এটি ব্যবহার করে একটি উপাদানে HTML কন্টেন্ট সন্নিবেশ করতে
+              পারেন। ব্যবহার: পাওয়া: HTML কন্টেন্টকে একটি স্ট্রিং হিসেবে ফেরত
+              দেয়। সেট করা: HTML কন্টেন্ট সেট করতে দেয়, যা ট্যাগ অন্তর্ভুক্ত
+              করতে পারে।<br>
+  
+            </p>
+          </div>
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">
+              Question 3: What is event delegation in the DOM?
+            </h2>
+            <p class="text-gray-600 text-xl">
+              ইভেন্ট ডেলিগেশন হল একটি শক্তিশালী কৌশল যা জাভাস্ক্রিপ্টে ইভেন্টগুলি আরও কার্যকরভাবে পরিচালনা করতে ব্যবহৃত হয়। এর মাধ্যমে, আপনি একটি প্যারেন্ট উপাদানে একটি ইভেন্ট লিসেনার যুক্ত করেন, যা তার শিশু উপাদানগুলির ইভেন্টগুলির জন্য কাজ করে।
+            </p>
+          </div>
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">
+              Question 4: What is event bubbling in the DOM?
+            </h2>
+            <p class="text-gray-600 text-xl">
+              ইভেন্ট বুবলিং হল DOM-এর একটি মৌলিক ধারণা যা ইভেন্টগুলির প্রভাব কিভাবে উপাদানের হায়ারার্কিতে ছড়িয়ে পড়ে তা বর্ণনা করে। যখন একটি ইভেন্ট একটি নির্দিষ্ট উপাদানে ঘটে, তখন এটি প্রথমে সেই উপাদানে (লক্ষ্য) ট্রিগার হয় এবং তারপর এটি তার প্যারেন্ট উপাদানগুলির দিকে "বুবল" করে, প্যারেন্টগুলিতে সংযুক্ত যেকোনো ইভেন্ট লিসেনারকে ট্রিগার করে।
+            </p>
+          </div>
+          <div class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">
+              Question 5: How do you create, add, and remove elements using
+              JavaScript?
+            </h2>
+            <p class="text-gray-600 text-xl">
+              জাভাস্ক্রিপ্ট ব্যবহার করে DOM-এ উপাদান তৈরি, যোগ এবং মুছে ফেলার প্রক্রিয়া নিচে সংক্ষেপে বর্ণনা করা হলো: <br>
+              নতুন উপাদান তৈরি করতে document.createElement() মেথড ব্যবহার করা হয়। <br>
+              তৈরি করা উপাদানটি DOM-এ যোগ করতে appendChild(), insertBefore(), বা append() মেথড ব্যবহার করা হয়। <br>
+              DOM থেকে উপাদান মুছে ফেলতে remove() বা parentNode.removeChild() মেথড ব্যবহার করা হয়।
+            </p>
+        
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
